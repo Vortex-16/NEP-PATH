@@ -12,19 +12,19 @@ const roles = [
   {
     name: 'Student',
     description: 'Find internships, track applications, and build your career.',
-    href: '/dashboard',
+    href: '/login?role=student',
     icon: '🎓',
   },
   {
     name: 'Faculty',
     description: 'Monitor student progress, approve internships, and collaborate with industry.',
-    href: '/faculty/dashboard',
+    href: '/login?role=faculty',
     icon: '🏫',
   },
   {
     name: 'Industry',
     description: 'Post internships, find top talent, and manage applicants.',
-    href: '/industry/dashboard',
+    href: '/login?role=industry',
     icon: '🏢',
   },
 ];
@@ -51,7 +51,7 @@ export default function LandingPage() {
               </div>
               <CardContent>
                 <div className="flex items-center font-semibold text-primary">
-                  <span>Go to Dashboard</span>
+                  <span>Get Started</span>
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </div>
               </CardContent>
