@@ -11,6 +11,7 @@ import {
   Settings,
   User,
   Users,
+  Sparkles,
 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -36,6 +37,7 @@ import { Separator } from './ui/separator';
 const studentLinks = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/internships', label: 'Internships', icon: Briefcase },
+  { href: '/recommendations', label: 'AI Recommendations', icon: Sparkles },
   { href: '/applications', label: 'Applications', icon: NotebookText },
   { href: '/resources', label: 'Resources', icon: BookCopy },
   { href: '/logbook', label: 'Internship Logbook', icon: NotebookText },
