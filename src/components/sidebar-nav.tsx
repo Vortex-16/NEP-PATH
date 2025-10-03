@@ -57,6 +57,7 @@ export function SidebarNav() {
   const pathname = usePathname();
 
   const isActive = (href: string) => pathname === href;
+  const currentPathRoot = pathname.split('/')[1];
 
   const NepPathLogo = () => (
     <div className="flex items-center gap-2">
@@ -66,6 +67,29 @@ export function SidebarNav() {
       <h1 className="text-lg font-bold">NEP PATH</h1>
     </div>
   );
+  
+  const getLinks = () => {
+    if (currentPathRoot === 'faculty') {
+      return facultyLinks;
+    }
+    if (currentPathRoot === 'industry') {
+      return industryLinks;
+    }
+    return studentLinks;
+  }
+  
+  const getGroupLabel = () => {
+    if (currentPathRoot === 'faculty') {
+      return 'Faculty';
+    }
+    if (currentPathRoot === 'industry') {
+      return 'Industry';
+    }
+    return 'Student';
+  }
+
+  const links = getLinks();
+
 
   return (
     <>
@@ -74,9 +98,9 @@ export function SidebarNav() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Student</SidebarGroupLabel>
+          <SidebarGroupLabel>{getGroupLabel()}</SidebarGroupLabel>
           <SidebarMenu>
-            {studentLinks.map((link) => (
+            {links.map((link) => (
               <SidebarMenuItem key={link.href}>
                 <Link href={link.href} legacyBehavior passHref>
                   <SidebarMenuButton
@@ -92,42 +116,21 @@ export function SidebarNav() {
           </SidebarMenu>
         </SidebarGroup>
         
-        <SidebarGroup>
-          <SidebarGroupLabel>Other Dashboards</SidebarGroupLabel>
-          <Collapsible>
-            <CollapsibleTrigger asChild>
-                <SidebarMenuButton className="w-full justify-start">
-                    <Users /> 
-                    <span>Other Roles</span>
-                    <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform duration-200" />
-                </SidebarMenuButton>
-            </CollapsibleTrigger>
-            <CollapsibleContent className="pl-4">
-                 <SidebarMenu className="mt-2">
-                    <SidebarMenuItem>
-                        <Link href="#" legacyBehavior passHref><SidebarMenuButton variant="ghost" className="w-full justify-start"><Users className="text-muted-foreground"/>Faculty</SidebarMenuButton></Link>
-                    </SidebarMenuItem>
-                    <SidebarMenuItem>
-                        <Link href="#" legacyBehavior passHref><SidebarMenuButton variant="ghost" className="w-full justify-start"><Briefcase className="text-muted-foreground" />Industry</SidebarMenuButton></Link>
-                    </SidebarMenuItem>
-                 </SidebarMenu>
-            </CollapsibleContent>
-          </Collapsible>
-        </SidebarGroup>
-
-        <SidebarGroup>
-            <SidebarGroupLabel>Analytics</SidebarGroupLabel>
-            <SidebarMenu>
-                <SidebarMenuItem>
-                    <Link href="/analytics" legacyBehavior passHref>
-                        <SidebarMenuButton isActive={isActive('/analytics')} tooltip={{ children: "Analytics" }}>
-                            <LineChart />
-                            <span>Analytics</span>
-                        </SidebarMenuButton>
-                    </Link>
-                </SidebarMenuItem>
-            </SidebarMenu>
-        </SidebarGroup>
+        {currentPathRoot !== 'analytics' && (
+          <SidebarGroup>
+              <SidebarGroupLabel>Analytics</SidebarGroupLabel>
+              <SidebarMenu>
+                  <SidebarMenuItem>
+                      <Link href="/analytics" legacyBehavior passHref>
+                          <SidebarMenuButton isActive={isActive('/analytics')} tooltip={{ children: "Analytics" }}>
+                              <LineChart />
+                              <span>Analytics</span>
+                          </SidebarMenuButton>
+                      </Link>
+                  </SidebarMenuItem>
+              </SidebarMenu>
+          </SidebarGroup>
+        )}
 
 
       </SidebarContent>
