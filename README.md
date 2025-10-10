@@ -1,8 +1,8 @@
-# NEP PATH - Internship Platform
+# Trybe - Internship Platform
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge&logo=vercel)](https://nep-path.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge&logo=vercel)](https://trybe.vercel.app/)
 
-NEP PATH is a comprehensive, AI-powered web application designed to bridge the gap between students, faculty, and industry partners in the internship ecosystem. Built with a modern tech stack, it provides tailored experiences for each user role, streamlining the process of finding, managing, and monitoring internships.
+Trybe is a comprehensive, AI-powered web application designed to bridge the gap between students, faculty, and industry partners in the internship ecosystem. Built with a modern tech stack, it provides tailored experiences for each user role, streamlining the process of finding, managing, and monitoring internships.
 
 ## ✨ Key Features
 

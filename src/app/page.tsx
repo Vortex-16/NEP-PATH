@@ -33,7 +33,7 @@ export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
       <div className="mb-12 text-center">
-        <h1 className="text-5xl font-bold tracking-tighter">Welcome to NEP PATH</h1>
+  <h1 className="text-5xl font-bold tracking-tighter">Welcome to Trybe</h1>
         <p className="mt-4 text-xl text-muted-foreground">
           Your all-in-one platform for internships.
         </p>

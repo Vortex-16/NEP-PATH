@@ -1,4 +1,4 @@
-# **App Name**: NEP PATH
+# **App Name**: Trybe
 
 ## Core Features:
 
