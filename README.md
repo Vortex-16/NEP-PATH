@@ -1,49 +1,183 @@
-# Trybe - Internship Platform
+<div align="center">
+  <h1>🔥 NEP-PATH</h1>
+  <p><i>A Next.js project with a modern UI and secure authentication</i></p>
+  <p>
+    <img src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/version-0.1.0-blue?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/license-Not specified-green?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/language-TypeScript-3178C6?style=for-the-badge&logo=typescript" />
+  </p>
+</div>
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge&logo=vercel)](https://trybe.vercel.app/)
+<details open>
+<summary><b>🗺️ Table of Contents</b></summary>
 
-Trybe is a comprehensive, AI-powered web application designed to bridge the gap between students, faculty, and industry partners in the internship ecosystem. Built with a modern tech stack, it provides tailored experiences for each user role, streamlining the process of finding, managing, and monitoring internships.
+| Section | Description |
+|:--------|:------------|
+| [✨ Features](#-features) | What this project offers |
+| [🛠️ Tech Stack](#-tech-stack) | Technologies used |
+| [🚀 Getting Started](#-getting-started) | Setup instructions |
+| [📖 Usage](#-usage) | How to use |
+| [📁 Project Structure](#-project-structure) | Codebase organization |
+| [🔌 API Reference](#-api-reference) | Endpoints documentation |
+| [🤝 Contributing](#-contributing) | How to contribute |
+| [📄 License](#-license) | License info |
 
-## ✨ Key Features
+</details>
 
-- **Role-Based Access Control**: Separate, feature-rich dashboards for Students, Faculty, and Industry partners.
-- **Student Dashboard**:
-  - Browse and filter a wide range of internship opportunities.
-  - Track the status of all applications in one place.
-  - **AI Recommendations**: Get personalized internship suggestions based on your profile and skills, powered by Google's Gemini AI.
-  - **AI Report Generator**: Maintain a logbook of internship activities and automatically generate NEP-compliant reports.
-- **Faculty Dashboard**:
-  - Monitor student progress and internship statuses.
-  - Review and approve internship applications.
-- **Industry Dashboard**:
-  - Post and manage internship listings.
-  - View and manage incoming student applications.
-- **Analytics**: A dedicated dashboard providing insights into platform activity, student participation, and skill gaps.
-- **Modern UI/UX**: A clean, responsive, and intuitive interface built with ShadCN UI and Tailwind CSS.
+NEP-PATH is a Next.js project that provides a modern UI and secure authentication. It is designed for developers who want to build fast and scalable applications. The project includes a range of features, including a responsive design, secure authentication, and a fast API.
 
-## 🚀 Tech Stack
+> 🎯 **Key Highlights**
+> - ⚡ Fast and lightweight
+> - 🔒 Secure authentication
+> - 📱 Responsive design
 
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **UI Components**: [ShadCN UI](https://ui.shadcn.com/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Generative AI**: [Google Genkit](https://firebase.google.com/docs/genkit) with Gemini 2.5 Flash
-- **Deployment**: [Vercel](https://vercel.com/)
+## ✨ Features
+| | Feature | Description |
+|:--:|---------|-------------|
+| 🎨 | **Modern UI** | Beautiful, responsive interface built with React |
+| 🔐 | **Secure Auth** | JWT-based authentication with Clerk |
+| 📊 | **Analytics** | Real-time dashboard with charts |
+| 🚀 | **Fast API** | Express.js REST API with optimized queries |
 
-## 🏗️ System Architecture
+## 🛠️ Tech Stack
+### 🎨 Frontend
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-The application is built on Next.js, leveraging its App Router for server-side rendering and optimized performance. The frontend is constructed with React and styled using Tailwind CSS, with a component library from ShadCN UI ensuring a consistent and modern look.
+### ⚙️ Backend
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 
-The AI-powered features are implemented using Google's Genkit, which integrates with the Gemini 2.5 Flash model to provide intelligent internship recommendations and report generation. The application is designed with a clear separation of concerns, with distinct routes and layouts for each user role (Student, Faculty, Industry).
+### 🗄️ Database
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-## 🤝 Contributor
+## 🚀 Getting Started
+### Prerequisites
+- ![Node.js](https://img.shields.io/badge/Node.js->=18.0-339933?logo=nodedotjs) 
+- ![npm](https://img.shields.io/badge/npm->=9.0-CB3837?logo=npm)
+- ![MongoDB](https://img.shields.io/badge/MongoDB->=6.0-47A248?logo=mongodb)
 
-- [Vortex-16](https://github.com/Vortex-16)
+### Installation
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/username/repo.git
+   cd repo
+   ```
+
+2. **Install dependencies**
+   ```bash
+   # Install client dependencies
+   cd client && npm install
+   
+   # Install server dependencies
+   cd ../server && npm install
+   ```
+
+3. **Configure environment**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your values
+   ```
+
+### Environment Variables
+<details>
+<summary>🔐 Environment Configuration</summary>
+
+#### Required
+| Variable | Description | Example |
+|:---------|:------------|:--------|
+| `MONGODB_URI` | Database connection | `mongodb://localhost:27017/app` |
+| `CLERK_SECRET_KEY` | Auth provider key | `sk_test_xxxxx` |
+
+#### Optional
+| Variable | Description | Default |
+|:---------|:------------|:--------|
+| `PORT` | Server port | `3000` |
+| `NODE_ENV` | Environment | `development` |
+
+> 📝 See `.env.example` for all variables
+
+</details>
+
+### Quick Start
+```bash
+# Start both client and server
+npm run dev
+```
+
+## 📖 Usage
+```bash
+# Development
+npm run dev          # Start dev server with hot reload
+
+# Production
+npm run build        # Build optimized bundle
+npm run start        # Start production server
+
+# Testing
+npm run test         # Run test suite
+npm run test:watch   # Watch mode
+```
+
+## 📁 Project Structure
+```text
+📦 project-root
+│
+├── 📂 client/                      # React Frontend
+│   ├── 📂 src/
+│   │   ├── 📂 components/          # UI Components
+│   │   │   ├── 📂 ui/              # Base components
+│   │   │   └── 📂 features/        # Feature modules
+│   │   ├── 📂 pages/               # Route pages
+│   │   ├── 📂 hooks/               # Custom hooks
+│   │   ├── 📂 services/            # API layer
+│   │   ├── 📂 utils/               # Utilities
+│   │   └── 📄 main.jsx             # Entry point
+│   ├── 📄 package.json
+│   ├── 📄 vite.config.js
+│   └── 📄 tailwind.config.js
+│
+├── 📂 server/                      # Express Backend
+│   ├── 📂 src/
+│   │   ├── 📂 controllers/         # Request handlers
+│   │   ├── 📂 middleware/          # Auth, validation
+│   │   ├── 📂 models/              # Database schemas
+│   │   ├── 📂 routes/              # API routes
+│   │   ├── 📂 services/            # Business logic
+│   │   ├── 📂 utils/               # Helpers
+│   │   └── 📄 app.js               # App setup
+│   ├── 📄 package.json
+│   └── 📄 .env.example
+├── 📄 README.md
+└── 📄 .gitignore
+```
+
+## 🔌 API Reference
+| Method | Endpoint | Description | Auth |
+|:-------|:---------|:------------|:----:|
+| ![GET](https://img.shields.io/badge/GET-blue) | `/api/projects` | Get all projects | 🔒 |
+| ![POST](https://img.shields.io/badge/POST-green) | `/api/projects` | Create project | 🔒 |
+
+## 🤝 Contributing
+Contributions are welcome! 🎉
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+## 📄 License
+Distributed under the Not specified License. See `LICENSE` for more information.
+
+[![License: Not specified](https://img.shields.io/badge/License-Not%20specified-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/)
 
 ---
-This project is Under Development.
-Thank You.
-
-
-
-*Ui For SIH (FIREBASE STUDIO)
+<div align="center">
+  <p>Made with ❤️ by <a href="https://github.com/username">Your Name</a></p>
+  <p>⭐ Star this repo if you find it useful!</p>
+</div>
